@@ -1,0 +1,41 @@
+file = open('../../txt/progress.txt', 'a')
+
+name = input('Your name: ')
+Second_name = input('Your second name: ')
+dad_name = input('Your dad name: ')
+file.write('\n\n')
+file.write(name)
+file.write('  ')
+file.write(Second_name)
+file.write('  ')
+file.write(dad_name)
+file.write('\n\n')
+print('Ваши данные успешно добавленны.')
+
+mathe_bal = str(input('Ваш бал по математике: '))
+file.write('Your ball for mathematical -  ')
+file.write(mathe_bal)
+file.write(', ')
+history_bal = str(input('Ваш бал по истории: '))
+file.write('Your ball for history -  ')
+file.write(history_bal)
+file.write(', ')
+ukr_bal = str(input('Ваш бал по украинскому: '))
+file.write('Your ball for ukraine -  ')
+file.write(ukr_bal)
+file.write('\n')
+print('Ваши баллы успешно добавленны.')
+
+math_int = int(mathe_bal)
+hist_int = int(history_bal)
+ukr_int = int(ukr_bal)
+mat_his_ukr_sr_ball = (math_int + hist_int + ukr_int) / 3
+print('Ваш средний бал: ', mat_his_ukr_sr_ball)
+if mat_his_ukr_sr_ball >= 75.46:
+    print('Можете радоваться,', name, 'вы ЗАЧИСЛЕННЫ! ')
+    file.write('Zachislen(-a)')
+elif mat_his_ukr_sr_ball < 75.46:
+    print('Не грустите,', name, 'вы НЕ зачисленны! ')
+    file.write('No Zachislen(-a)')
+
+file.close()
